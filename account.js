@@ -11,7 +11,7 @@ var telegram_channel_link = "https://t.me/rxtopuphelpline";
 // =======================================================
 // TELEGRAM GROUP LINK
 // =======================================================
-var telegram_group_link = "telegram group link";
+var telegram_group_link = "https://t.me/+FLTe6koEj_o5YmU1";
 
 // =======================================================
 // YOUTUBE CHANNEL LINK
