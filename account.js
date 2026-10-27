@@ -6,7 +6,7 @@ var website_name = "RX TOPUP";
 // =======================================================
 // TELEGRAM CHANNEL LINK
 // =======================================================
-var telegram_channel_link = "telegram channel link";
+var telegram_channel_link = "https://t.me/rxtopuphelpline";
 
 // =======================================================
 // TELEGRAM GROUP LINK
