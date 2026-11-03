@@ -22,4 +22,5 @@ var youtube_channel_link = "http://www.youtube.com/@RXTOPUPFF";
 // NOTIFICATION TEXT
 // =======================================================
 var notification_text = `RX GAMING এবং TB2K(TAMIM)এর
-সস্তা সাইট ♥️`;
+সস্তা সাইট ♥️। যার UID এর কোনো ডেটা নেই তাকে TELEGRAM 
+থেকে TOPUP করে দেওয়া হবে`;
