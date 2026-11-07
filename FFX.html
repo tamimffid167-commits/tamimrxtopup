@@ -896,7 +896,17 @@ html,body,.pk,.po,.btn,.pay,.q,.card,.nav a,.pv-back{touch-action:manipulation}
     </div></div>
   </section>
   <section class="pv-box">
-    <div class="pv-head"><span class="n">2</span><h2>Select Payment</h2></div>
+    <div class="pv-head"><span class="n">2</span><h2>Enter Free Fire UID</h2></div>
+    <div class="pv-body">
+      <label class="lbl" for="mysteryUid">আপনার Free Fire Player ID দিন</label>
+      <input class="inp" id="mysteryUid" type="text" inputmode="numeric" autocomplete="off" maxlength="20" placeholder="Free Fire UID লিখুন">
+      <button class="btn" type="button" id="mysteryUidChk">আপনার গেম আইডির নাম চেক করুন</button>
+      <div class="pname" id="mysteryUidPname" aria-live="polite"></div>
+      <p class="hint" id="mysteryUidHint">UID লিখে নাম চেক করুন, তারপর পেমেন্ট নির্বাচন করুন।</p>
+    </div>
+  </section>
+  <section class="pv-box">
+    <div class="pv-head"><span class="n">3</span><h2>Select Payment</h2></div>
     <div class="pv-body">
       <div class="po-grid" id="mysteryPo">
         <div role="button" tabindex="0" class="po on" data-pay="Wallet Pay"><div class="pbx"><img src="wallet.jpg" alt="" onerror="this.style.display='none'"></div><div class="pft">Wallet Pay</div></div>
@@ -2887,7 +2897,8 @@ setInterval(fetchFreshAccountConfig, 15000);
     ['wlChk','wlInp','wlPname'],
     ['luChk','luInp','luPname'],
     ['inChk','inInp','inPname'],
-    ['ucChk','ucInp','ucPname']
+    ['ucChk','ucInp','ucPname'],
+    ['mysteryUidChk','mysteryUid','mysteryUidPname']
   ];
   var LABEL='আপনার গেম আইডির নাম চেক করুন';
   document.querySelectorAll('[data-open="uid-checker"]').forEach(function(a){ a.addEventListener('click',function(e){ e.preventDefault(); location.hash='uid-checker'; }); });
@@ -3169,13 +3180,23 @@ setInterval(fetchFreshAccountConfig, 15000);
   var loggedIn=false; // আপনার সাইটের লগইন ব্যাকএন্ড যুক্ত হলে এখানে সংযোগ দিন
   var loginUrl='#';
   var buy=document.getElementById('mysteryBuy');
+  var uidInput=document.getElementById('mysteryUid');
+  var uidHint=document.getElementById('mysteryUidHint');
   var warn=document.getElementById('mysteryLoginWarn');
+  uidInput.addEventListener('input',function(){this.value=this.value.replace(/\D/g,'');uidHint.textContent='সঠিক UID দিয়ে তারপর পেমেন্ট নির্বাচন করুন।';uidHint.className='hint';});
   var toastEl=document.getElementById('toast'), timer;
   function toast(msg){if(!toastEl)return;toastEl.textContent=msg;toastEl.classList.add('show');clearTimeout(timer);timer=setTimeout(function(){toastEl.classList.remove('show');},2400);}
   function update(){document.getElementById('mysteryNeed').textContent=selected.price;if(loggedIn){warn.style.display='none';buy.textContent='Buy Now';buy.href='#';}else{warn.style.display='flex';buy.textContent='Login';buy.href=loginUrl;}}
   grid.addEventListener('click',function(e){var b=e.target.closest('.pk');if(!b)return;grid.querySelectorAll('.pk').forEach(function(x){x.classList.remove('on');});b.classList.add('on');selected.name=b.dataset.name;selected.price=Number(b.dataset.price);update();});
   document.querySelectorAll('#mysteryPo .po').forEach(function(el){el.addEventListener('click',function(){document.querySelectorAll('#mysteryPo .po').forEach(function(x){x.classList.remove('on');});el.classList.add('on');selected.pay=el.dataset.pay;});});
-  buy.addEventListener('click',function(e){if(!loggedIn){if(loginUrl==='#')e.preventDefault();return;}e.preventDefault();if(!selected.name){toast('আগে একটি Mystery Box প্যাকেজ সিলেক্ট করুন');return;}toast('অর্ডার সাবমিট হচ্ছে... ('+selected.name+', '+selected.price+' টাকা, '+selected.pay+')');});
+  buy.addEventListener('click',function(e){
+    e.preventDefault();
+    var uid=uidInput.value.trim();
+    if(!selected.name){toast('আগে একটি Mystery Box প্যাকেজ সিলেক্ট করুন');return;}
+    if(uid.length<6){uidHint.textContent='সঠিক Free Fire UID দিন (কমপক্ষে ৬ সংখ্যা)।';uidHint.className='hint warnx';uidInput.focus();return;}
+    if(!loggedIn){if(loginUrl!=='#')location.href=loginUrl;else toast('Please Login To Purchase');return;}
+    toast('অর্ডার সাবমিট হচ্ছে... ('+selected.name+', UID: '+uid+', '+selected.price+' টাকা, '+selected.pay+')');
+  });
   update();
 })();
 </script>
