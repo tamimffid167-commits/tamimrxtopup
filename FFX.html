@@ -2273,7 +2273,6 @@ setInterval(fetchFreshAccountConfig, 15000);
   function pickPk(e){
     var b=e.target.closest ? e.target.closest('.pk') : null;
     if(!b || !pkGrid.contains(b)) return;
-    if(!wmFridayOffer || (b.dataset.name!=='WEEKLY' && b.dataset.name!=='MONTHLY')) return;
     pks.forEach(function(x){x.classList.remove('on')});
     b.classList.add('on'); sel.name=b.dataset.name; sel.price=+b.dataset.price; upd();
   }
