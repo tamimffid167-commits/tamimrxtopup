@@ -20,7 +20,9 @@
       "url": "http://www.youtube.com/@RXTOPUPFF"
     }
   ],
-  "images": null,
+  "images": {
+    "pop": "img-pop-1794230576676.png"
+  },
   "prod": null,
   "texts": {
     "sec1": "REGULAR GAME TOPUP",
