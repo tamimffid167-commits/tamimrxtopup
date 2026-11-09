@@ -23,7 +23,82 @@
   "images": {
     "pop": "img-pop-1794230580412.png"
   },
-  "prod": null,
+  "prod": {
+    "uid": {
+      "packages": [
+        {
+          "label": "WEEKLY",
+          "name": "WEEKLY",
+          "price": 150
+        },
+        {
+          "label": "MONTHLY",
+          "name": "MONTHLY",
+          "price": 650
+        },
+        {
+          "label": "25 Diamond",
+          "name": "25 Diamond",
+          "price": 20
+        },
+        {
+          "label": "50 Diamond",
+          "name": "50 Diamond",
+          "price": 30
+        },
+        {
+          "label": "115 Diamond",
+          "name": "115 Diamond",
+          "price": 70
+        },
+        {
+          "label": "240 Diamond",
+          "name": "240 Diamond",
+          "price": 150
+        },
+        {
+          "label": "355 Diamond",
+          "name": "355 Diamond",
+          "price": 230
+        },
+        {
+          "label": "480 Diamond",
+          "name": "480 Diamond",
+          "price": 310
+        },
+        {
+          "label": "610 Diamond",
+          "name": "610 Diamond",
+          "price": 350
+        },
+        {
+          "label": "850 Diamond",
+          "name": "850 Diamond",
+          "price": 550
+        },
+        {
+          "label": "1240 Diamond",
+          "name": "1240 Diamond",
+          "price": 700
+        },
+        {
+          "label": "2530 Diamond",
+          "name": "2530 Diamond",
+          "price": 1500
+        },
+        {
+          "label": "5060 Diamond",
+          "name": "5060 Diamond",
+          "price": 3000
+        },
+        {
+          "label": "10120 Diamond",
+          "name": "10120 Diamond",
+          "price": 5000
+        }
+      ]
+    }
+  },
   "texts": {
     "sec1": "REGULAR GAME TOPUP",
     "sec2": "FF UID CHECKER",
