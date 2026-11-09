@@ -1,7 +1,6 @@
 {
   "logo": "logo-1793890453731.jpg",
   "ffBanner": null,
-  "ffPackages": null,
   "banners": [
     "banner-1794040176952-9790.jpg",
     "banner-1794041310591-4708.jpg",
@@ -20,5 +19,10 @@
       "label": "YouTube",
       "url": "http://www.youtube.com/@RXTOPUPFF"
     }
-  ]
+  ],
+  "images": null,
+  "prod": null,
+  "texts": {
+    "sec1": "REGULAR GAME TOPUP"
+  }
 }
