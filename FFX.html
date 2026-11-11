@@ -290,7 +290,7 @@ footer .about h2{margin:0 0 6px;font-size:24px;font-weight:800;letter-spacing:-.
 .pk:hover{border-color:#93c5fd}
 .pk:active{transform:scale(.97)}
 .pk span{font-size:14px;font-weight:700;line-height:1.55}
-.pk b{font-size:15px;font-weight:800;color:var(--v)}\n#mysteryPkGrid .pk small{display:block;margin-top:5px;font-size:11px;font-weight:600;line-height:1.4;color:#52627a}
+.pk b{font-size:15px;font-weight:800;color:var(--v)}
 .pk.on{border-color:var(--v);background:linear-gradient(160deg,#eff5ff,#fff);box-shadow:0 0 0 3px rgba(37,99,235,.15),0 10px 20px -12px rgba(37,99,235,.7)}
 .pk.on:after{content:"✓";position:absolute;top:-8px;right:-6px;width:22px;height:22px;border-radius:50%;background:var(--g);color:#fff;font-size:12px;font-weight:800;display:grid;place-items:center;border:2px solid #fff}
 .lbl{display:block;margin:2px 0 10px;font-size:16px;font-weight:700}
@@ -784,6 +784,26 @@ html,body,.pk,.po,.btn,.pay,.q,.card,.nav a,.pv-back{touch-action:manipulation}
 .ac-mi .go{margin-left:auto;color:#94a3b8;font-size:17px}
 .ac-mi.out{color:#b42318}
 .ac-mi.out .mi{background:#fee4e2;color:#b42318}
+
+/* RX Topup login overlay — uses the website's existing blue/white theme */
+.rx-login-overlay{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;padding:18px;background:rgba(15,23,42,.58);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px)}
+.rx-login-overlay[hidden]{display:none!important}
+.rx-login-card{position:relative;width:min(100%,480px);max-height:calc(100dvh - 36px);overflow:auto;background:var(--card,#fff);color:var(--tx,#0f172a);border:1px solid var(--bd,#e1e8f5);border-radius:24px;padding:28px;box-shadow:0 24px 80px rgba(15,23,42,.28);font-family:inherit}
+.rx-login-close{position:absolute;right:16px;top:14px;width:38px;height:38px;border:1px solid var(--bd,#e1e8f5);border-radius:50%;background:var(--bg,#f5f8ff);color:var(--tx,#0f172a);font-size:27px;line-height:1;cursor:pointer}
+.rx-login-brand{display:flex;align-items:center;gap:10px;margin:0 42px 26px 0;font-weight:850;color:var(--v,#2563eb);font-size:16px}
+.rx-login-brand img{width:auto;height:42px;max-width:135px;object-fit:contain}
+.rx-login-heading{display:flex;align-items:center;gap:14px;padding:16px;border:1px solid var(--bd,#e1e8f5);border-radius:17px;background:var(--bg,#f5f8ff);margin-bottom:16px}
+.rx-login-mark{width:46px;height:46px;display:grid;place-items:center;border-radius:14px;background:var(--g,linear-gradient(135deg,#3b82f6,#1d4ed8));color:#fff;font-size:23px;font-weight:900;flex:none}
+.rx-login-heading h2{font-size:21px;line-height:1.25;margin:0 0 4px;font-weight:850}
+.rx-login-heading p{font-size:12px;color:var(--mu,#666b85);margin:0}
+.rx-google-btn{width:100%;display:flex;align-items:center;gap:12px;text-align:left;padding:12px;border:1px solid var(--v,#2563eb);border-radius:14px;background:#fff;color:#111827;cursor:pointer;box-shadow:0 7px 18px rgba(37,99,235,.08);font-family:inherit}
+.rx-google-g{width:38px;height:38px;display:grid;place-items:center;border-radius:11px;background:#fff;border:1px solid #e5e7eb;font-size:23px;font-weight:900;color:#4285f4;flex:none;text-shadow:1px 1px #34a853,-1px -1px #ea4335}
+.rx-google-btn b,.rx-google-btn small{display:block}.rx-google-btn b{font-size:14px}.rx-google-btn small{font-size:11px;color:var(--mu,#666b85);margin-top:3px}.rx-google-arrow{margin-left:auto;width:30px;height:30px;border-radius:9px;background:var(--bg,#f5f8ff);color:var(--v,#2563eb);display:grid;place-items:center;font-size:20px}
+.rx-login-points{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:22px 0}.rx-login-points span{display:flex;align-items:center;flex-direction:column;gap:4px;color:var(--v,#2563eb);font-size:18px}.rx-login-points b{font-size:12px;color:var(--tx,#0f172a)}.rx-login-points small{font-size:10px;color:var(--mu,#666b85)}
+.rx-login-safe{display:flex;align-items:center;gap:11px;padding:12px;border:1px solid var(--bd,#e1e8f5);border-radius:13px;background:var(--bg,#f5f8ff)}.rx-login-safe>span{width:29px;height:29px;display:grid;place-items:center;border-radius:9px;background:var(--v,#2563eb);color:#fff;font-weight:900}.rx-login-safe b,.rx-login-safe small{display:block}.rx-login-safe b{font-size:12px;color:var(--v,#2563eb)}.rx-login-safe small{font-size:10px;color:var(--mu,#666b85);margin-top:3px}
+.rx-login-back{display:block;margin:18px auto 0;border:0;background:transparent;color:var(--v,#2563eb);font:700 13px inherit;cursor:pointer;padding:8px 12px}
+@media(max-width:520px){.rx-login-card{padding:22px 18px;border-radius:20px}.rx-login-brand{margin-bottom:20px}.rx-login-heading h2{font-size:19px}}
+
 </style>
 </head>
 <body>
@@ -889,10 +909,10 @@ html,body,.pk,.po,.btn,.pay,.q,.card,.nav a,.pv-back{touch-action:manipulation}
   <section class="pv-box">
     <div class="pv-head"><span class="n">1</span><h2>Select Mystery Box</h2></div>
     <div class="pv-body"><div class="pk-grid" id="mysteryPkGrid">
-      <button type="button" class="pk" data-name="MYSTERY BOX 25 TK" data-price="25"><span>MYSTERY BOX<br><small>পুরস্কার: 25 Diamond / 50 Diamond / Weekly Lite</small></span><b>BDT 25</b></button>
-      <button type="button" class="pk" data-name="MYSTERY BOX 50 TK" data-price="50"><span>MYSTERY BOX<br><small>পুরস্কার: 50 Diamond / 115 Diamond</small></span><b>BDT 50</b></button>
-      <button type="button" class="pk" data-name="MYSTERY BOX 100 TK" data-price="100"><span>MYSTERY BOX<br><small>পুরস্কার: Weekly / 225 Diamond</small></span><b>BDT 100</b></button>
-      <button type="button" class="pk" data-name="MYSTERY BOX 500 TK" data-price="500"><span>MYSTERY BOX<br><small>পুরস্কার: Monthly / 1270 Diamond</small></span><b>BDT 500</b></button>
+      <button type="button" class="pk" data-name="MYSTERY BOX 25 TK" data-price="25"><span>MYSTERY BOX</span><b>BDT 25</b></button>
+      <button type="button" class="pk" data-name="MYSTERY BOX 50 TK" data-price="50"><span>MYSTERY BOX</span><b>BDT 50</b></button>
+      <button type="button" class="pk" data-name="MYSTERY BOX 100 TK" data-price="100"><span>MYSTERY BOX</span><b>BDT 100</b></button>
+      <button type="button" class="pk" data-name="MYSTERY BOX 500 TK" data-price="500"><span>MYSTERY BOX</span><b>BDT 500</b></button>
     </div></div>
   </section>
   <section class="pv-box">
@@ -917,7 +937,7 @@ html,body,.pk,.po,.btn,.pay,.q,.card,.nav a,.pv-back{touch-action:manipulation}
       <a class="btn login" id="mysteryBuy" href="#">Login</a>
     </div>
   </section>
-  <section class="pv-box rules"><div class="pv-head rh"><svg class="i"><use href="#doc"/></svg><h2>Rules &amp; Conditions</h2></div><div class="pv-body"><ul class="rl"><li>অর্ডার করার আগে সঠিক প্যাকেজ নির্বাচন করুন।</li><li>প্রতিটি Mystery Box থেকে উল্লেখিত পুরস্কারগুলোর মধ্যে যেকোনো একটি দৈবভাবে (Random) পাওয়া যাবে।</li><li>অর্ডার সংক্রান্ত সহায়তার জন্য Telegram-এ যোগাযোগ করুন।</li></ul></div></section>
+  <section class="pv-box rules"><div class="pv-head rh"><svg class="i"><use href="#doc"/></svg><h2>Rules &amp; Conditions</h2></div><div class="pv-body"><ul class="rl"><li>অর্ডার করার আগে সঠিক প্যাকেজ নির্বাচন করুন।</li><li>Mystery Box-এর পুরস্কার/কনটেন্ট অফারের নিয়ম অনুযায়ী নির্ধারিত হবে।</li><li>অর্ডার সংক্রান্ত সহায়তার জন্য Telegram-এ যোগাযোগ করুন।</li></ul></div></section>
 </main>
 
 <main class="wrap" id="ffView" hidden>
@@ -1547,6 +1567,25 @@ html,body,.pk,.po,.btn,.pay,.q,.card,.nav a,.pv-back{touch-action:manipulation}
     <button class="ac-mi out" type="button" id="acLogout"><span class="mi"><svg class="i"><use href="#a-in"/></svg></span><span id="acLoTx">Login</span><svg class="i go"><use href="#arr"/></svg></button>
   </nav>
 </main>
+
+
+<!-- LOGIN OVERLAY: stays inside the existing RX Topup website -->
+<div id="rxLoginOverlay" class="rx-login-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="rxLoginTitle" hidden>
+  <div class="rx-login-card">
+    <button type="button" class="rx-login-close" id="rxLoginClose" aria-label="Close login">×</button>
+    <div class="rx-login-brand"><img src="Main logo.jpg" alt="Website logo" data-site-logo><span data-site-name>RX TOPUP</span></div>
+    <div class="rx-login-heading">
+      <span class="rx-login-mark">✓</span>
+      <div><h2 id="rxLoginTitle">Welcome Back</h2><p>আপনার অ্যাকাউন্টে নিরাপদে প্রবেশ করুন</p></div>
+    </div>
+    <button type="button" class="rx-google-btn" id="rxGoogleLogin">
+      <span class="rx-google-g">G</span><span><b>Continue with Google</b><small>দ্রুত ও নিরাপদে লগইন করুন</small></span><span class="rx-google-arrow">→</span>
+    </button>
+    <div class="rx-login-points"><span>⚡<b>Fast</b><small>দ্রুত প্রবেশ</small></span><span>✓<b>Secure</b><small>নিরাপদ লগইন</small></span><span>●<b>Trusted</b><small>সহজ ও নির্ভরযোগ্য</small></span></div>
+    <div class="rx-login-safe"><span>✓</span><div><b>আপনার তথ্য সুরক্ষিত</b><small>নিরাপদ Authentication আপনার অ্যাকাউন্ট রক্ষা করে।</small></div></div>
+    <button type="button" class="rx-login-back" id="rxLoginBack">← ওয়েবসাইটে ফিরে যান</button>
+  </div>
+</div>
 
 <div class="toast" id="toast"></div>
 
@@ -3199,5 +3238,45 @@ setInterval(fetchFreshAccountConfig, 15000);
   update();
 })();
 </script>
+
+<script>
+// Login opens as an overlay INSIDE this website; close/back returns to the page underneath.
+(function(){
+  var overlay=document.getElementById('rxLoginOverlay');
+  if(!overlay) return;
+  var closeBtn=document.getElementById('rxLoginClose');
+  var backBtn=document.getElementById('rxLoginBack');
+  var previousOverflow='';
+  function openLogin(e){
+    if(e){e.preventDefault();e.stopImmediatePropagation();}
+    previousOverflow=document.body.style.overflow;
+    overlay.hidden=false; overlay.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+    closeBtn.focus();
+  }
+  function closeLogin(){
+    overlay.hidden=true; overlay.setAttribute('aria-hidden','true');
+    document.body.style.overflow=previousOverflow;
+  }
+  document.addEventListener('click',function(e){
+    var trigger=e.target.closest('a.btn.login, #accLo, #acLoTx, #acLogout');
+    if(trigger){
+      // Logout must not be intercepted; only intercept controls currently labelled Login.
+      var label=(trigger.textContent||'').trim().toLowerCase();
+      if(trigger.id==='acLogout' || label==='logout') return;
+      openLogin(e);
+    }
+  },true);
+  closeBtn.addEventListener('click',closeLogin);
+  backBtn.addEventListener('click',closeLogin);
+  overlay.addEventListener('click',function(e){if(e.target===overlay)closeLogin();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!overlay.hidden)closeLogin();});
+  document.getElementById('rxGoogleLogin').addEventListener('click',function(){
+    var t=document.getElementById('toast');
+    if(t){t.textContent='Google sign-in চালু করতে Google OAuth Client ID সেটআপ প্রয়োজন।';t.classList.add('show');setTimeout(function(){t.classList.remove('show');},2800);}
+  });
+})();
+</script>
+
 </body>
 </html>
